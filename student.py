@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "r": ("Round", self.round)
+                "r": ("Round", self.round),
+                "sq": ("Round", self.square)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -78,7 +79,14 @@ class Piggy(PiggyParent):
                     self.right(primary=90, counter=-90)
                     time.sleep(999)
                     self.stop()
-                    
+
+    def square(self):
+        for edge in range(4):
+          self.fwd()
+          time.sleep(2)
+          self.right
+          time.sleep(0.8)
+        self.stop
       
     def shake(self):
         """ Another example move """
