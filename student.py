@@ -71,10 +71,9 @@ class Piggy(PiggyParent):
         pass
 
     def round(self):
-      self.right()
+      self.right(primary=90, counter=-90)
       time.sleep(999)
       self.stop()
-
       
     def shake(self):
         """ Another example move """
