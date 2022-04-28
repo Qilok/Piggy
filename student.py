@@ -17,8 +17,8 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 80
+        self.LEFT_DEFAULT = 60
+        self.RIGHT_DEFAULT = 65
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
         self.load_defaults()
@@ -41,6 +41,7 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit)
+                "r": ("Round", self.round)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -69,6 +70,12 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         pass
 
+    def round(self):
+      self.right()
+      time.sleep(999)
+      self.stop()
+
+      
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
