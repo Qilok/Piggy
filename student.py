@@ -71,7 +71,7 @@ class Piggy(PiggyParent):
         pass
 
     def round(self):
-      response = str.lower(input("Move left or move right(l/r): "))
+                response = str.lower(input("Move left or move right(l/r): "))
                 if response == 'l':
                     self.left(primary=90, counter=-90)
                 elif response == 'r':
