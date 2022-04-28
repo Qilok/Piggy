@@ -78,8 +78,7 @@ class Piggy(PiggyParent):
                     self.right(primary=90, counter=-90)
                     time.sleep(999)
                     self.stop()
-                else:
-                    break
+                    
       
     def shake(self):
         """ Another example move """
