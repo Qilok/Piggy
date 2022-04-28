@@ -71,9 +71,15 @@ class Piggy(PiggyParent):
         pass
 
     def round(self):
-      self.right(primary=90, counter=-90)
-      time.sleep(999)
-      self.stop()
+      response = str.lower(input("Move left or move right(l/r): "))
+                if response == 'l':
+                    self.left(primary=90, counter=-90)
+                elif response == 'r':
+                    self.right(primary=90, counter=-90)
+                    time.sleep(999)
+                    self.stop()
+                else:
+                    break
       
     def shake(self):
         """ Another example move """
