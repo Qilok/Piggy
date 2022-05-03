@@ -42,7 +42,7 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "r": ("Round", self.round),
-                "sq": ("Round", self.square)
+                "sq": ("Square", self.square)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -84,7 +84,7 @@ class Piggy(PiggyParent):
         for edge in range(4):
           self.fwd()
           time.sleep(2)
-          self.right
+          self.right()
           time.sleep(0.8)
         self.stop
       
