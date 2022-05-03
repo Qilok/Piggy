@@ -67,7 +67,7 @@ class Piggy(PiggyParent):
           self.read_distance()
           self.right()
           time.sleep(0.5)
-
+        self.stop()
           
     def dance(self):
       self.safe_to_dance()
