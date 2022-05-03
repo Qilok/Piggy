@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "sq": ("Square", self.square)
+                "sq": ("Square", self.square),
+                "std":("safe_to_dance", self.safe_to_dance)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -59,7 +60,9 @@ class Piggy(PiggyParent):
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        pass
+        for safty in range (2)
+          self.servo(1000)
+          self.read_distance()
 
     def dance(self):
       response = str.lower(input("Move left or move right(l/r): "))
