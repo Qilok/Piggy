@@ -95,7 +95,7 @@ class Piggy(PiggyParent):
           time.sleep(0.2)
         self.stop()
       
-      else
+      else:
         self.stop()
 
 
