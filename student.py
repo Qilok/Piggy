@@ -63,7 +63,12 @@ class Piggy(PiggyParent):
         for safty in range (2):
           self.servo(1000)
           self.read_distance()
+          self.servo(2000)
+          self.read_distance()
+          self.right(primary=90, counter=-90)
+          time.sleep(1)
 
+          
     def dance(self):
       response = str.lower(input("Move left or move right(l/r): "))
       if response == 'l':
