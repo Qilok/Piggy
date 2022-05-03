@@ -100,7 +100,6 @@ class Piggy(PiggyParent):
 
     def square(self):
         for edge in range(4):
-          get_heading(90)
           self.fwd()
           time.sleep(2)
           self.right()
