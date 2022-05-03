@@ -41,7 +41,6 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "r": ("Round", self.round),
                 "sq": ("Square", self.square)
                 }
         # loop and print the menu...
@@ -58,27 +57,25 @@ class Piggy(PiggyParent):
     ****************
     '''
 
-    def dance(self):
-        """A higher-ordered algorithm to make your robot dance"""
-        # TODO: check to see if it's safe before dancing
-        
-        # lower-ordered example...
-        self.right(primary=50, counter=50)
-        time.sleep(2)
-        self.stop()
-
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         pass
 
-    def round(self):
-                response = str.lower(input("Move left or move right(l/r): "))
-                if response == 'l':
-                    self.left(primary=90, counter=-90)
-                elif response == 'r':
-                    self.right(primary=90, counter=-90)
-                    time.sleep(999)
-                    self.stop()
+    def dance(self):
+      response = str.lower(input("Move left or move right(l/r): "))
+      if response == 'l':
+        self.left(primary=90, counter=-90)
+      elif response == 'r':
+        self.right(primary=90, counter=-90)
+      time.sleep(5)
+      self.fwd()
+      time.sleep(2) 
+      for butty in range(4):
+        self.right()
+        time.sleep(0.4)
+        self.left()
+        time.sleep(0.4)
+      self.stop()
 
     def square(self):
         for edge in range(4):
