@@ -97,6 +97,7 @@ class Piggy(PiggyParent):
       else
         self.stop()
 
+
     def square(self):
         for edge in range(4):
           self.fwd()
