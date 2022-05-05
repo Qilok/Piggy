@@ -63,7 +63,8 @@ class Piggy(PiggyParent):
         self.read_distance()
         self.fwd()
         time.sleep(0.5)
-        #self.stop()
+      else:  
+        self.stop()
       
 
 
