@@ -43,7 +43,7 @@ class Piggy(PiggyParent):
                 "q": ("Quit", self.quit),
                 "sq": ("Square", self.square),
                 "std":("safe_to_dance", self.safe_to_dance),
-                "cw": ("Check_wall", self.square)
+                "cw": ("Check_wall", self.check_wall)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -58,7 +58,7 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
-    def Check_wall(self):
+    def check_wall(self):
       while self.read_distance() >= 750:
         self.read_distance()
         self.fwd()
