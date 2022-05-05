@@ -68,21 +68,25 @@ class Piggy(PiggyParent):
         self.stop()
 
     def roof_turn(self):
-      while self.read_distance() >= 600:
-        self.read_distance()
-        self.fwd()
-        time.sleep(0.5)
-      else:  
-        self.right(primary=90, counter=-90)
-        time.sleep(1)
-        self.fwd()
-        time.sleep(0.5)
-        for butty2 in range(4):
+      i = 1
+      while i = 1:
+        while self.read_distance() >= 600:
+          self.read_distance()
+          self.fwd()
+          time.sleep(0.5)
+        else:  
           self.right(primary=90, counter=-90)
-          time.sleep(0.2)
-          self.left(primary=90, counter=-90)
-          time.sleep(0.2)
+          time.sleep(1)
+          self.fwd()
+          time.sleep(0.5)
+          for butty2 in range(4):
+            self.right(primary=90, counter=-90)
+            time.sleep(0.2)
+            self.left(primary=90, counter=-90)
+            time.sleep(0.2)
+      else:
         self.stop()
+        
 
 
       
@@ -99,7 +103,7 @@ class Piggy(PiggyParent):
           
     def dance(self):
       self.safe_to_dance()
-      if self.read_distance() >= 550:
+      if self.read_distance() >= 600:
         response = str.lower(input("Move left or move right(l/r): "))
         if response == 'l':
           self.left(primary=90, counter=-90)
