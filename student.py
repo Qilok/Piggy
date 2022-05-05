@@ -59,7 +59,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     def check_wall(self):
-      while self.read_distance() >= 750:
+      while self.read_distance() >= 600:
         self.read_distance()
         self.fwd()
         time.sleep(0.5)
