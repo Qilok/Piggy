@@ -103,7 +103,7 @@ class Piggy(PiggyParent):
           
     def dance(self):
       self.safe_to_dance()
-      if self.read_distance() >= 600:
+      if self.read_distance() >= 500:
         response = str.lower(input("Move left or move right(l/r): "))
         if response == 'l':
           self.left(primary=90, counter=-90)
