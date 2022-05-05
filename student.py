@@ -43,7 +43,8 @@ class Piggy(PiggyParent):
                 "q": ("Quit", self.quit),
                 "sq": ("Square", self.square),
                 "std":("safe_to_dance", self.safe_to_dance),
-                "cw": ("Check_wall", self.check_wall)
+                "cw": ("Check_wall", self.check_wall),
+                "rt": ("roof_turn", self.roof_turn)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -65,7 +66,23 @@ class Piggy(PiggyParent):
         time.sleep(0.5)
       else:  
         self.stop()
-      
+
+    def roof_turn(self):
+      while self.read_distance() >= 600:
+        self.read_distance()
+        self.fwd()
+        time.sleep(0.5)
+      else:  
+        self.right(primary=90, counter=-90)
+        time.sleep(1)
+        self.fwd()
+        time.sleep(0.5)
+        for butty2 in range(4):
+          self.right(primary=90, counter=-90)
+          time.sleep(0.2)
+          self.left(primary=90, counter=-90)
+          time.sleep(0.2)
+        self.stop()
 
 
       
