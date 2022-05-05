@@ -89,47 +89,43 @@ class Piggy(PiggyParent):
         
 
 
-      
+
     def safe_to_dance(self):
-          self.servo(1000)
-          self.read_distance()
-          if self.read_distance() >= 500:
-            self.stop()
-          else:
-            self.servo(2000)
-            self.read_distance()
-            self.servo(1300)
-            if self.read_distance() >= 500:
-              self.stop()
-          
+         pass
+
           
     def dance(self):
-      self.safe_to_dance()
+      self.servo(1000)
+      self.read_distance()
       if self.read_distance() >= 500:
-        response = str.lower(input("Move left or move right(l/r): "))
-        if response == 'l':
-          self.left(primary=90, counter=-90)
-        elif response == 'r':
-          self.right(primary=90, counter=-90)
-        time.sleep(5)
-        self.fwd()
-        time.sleep(2) 
-        for butty in range(4):
-          self.right()
-          time.sleep(0.4)
-          self.left()
-          time.sleep(0.4)
-          
-        for butty2 in range(4):
-          self.right(primary=90, counter=-90)
-          time.sleep(0.2)
-          self.left(primary=90, counter=-90)
-          time.sleep(0.2)
         self.stop()
-      
       else:
-        print("no dance")
-        self.stop()
+        self.servo(2000)
+        self.read_distance()
+        if self.read_distance() >= 500:
+          self.stop()
+        else:
+          self.servo(1300)
+          response = str.lower(input("Move left or move right(l/r): "))
+          if response == 'l':
+            self.left(primary=90, counter=-90)
+          elif response == 'r':
+            self.right(primary=90, counter=-90)
+          time.sleep(5)
+          self.fwd()
+          time.sleep(2) 
+          for butty in range(4):
+            self.right()
+            time.sleep(0.4)
+            self.left()
+            time.sleep(0.4)
+              
+          for butty2 in range(4):
+            self.right(primary=90, counter=-90)
+            time.sleep(0.2)
+            self.left(primary=90, counter=-90)
+            time.sleep(0.2)
+          self.stop()
 
 
     def square(self):
