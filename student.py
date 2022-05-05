@@ -42,7 +42,8 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "sq": ("Square", self.square),
-                "std":("safe_to_dance", self.safe_to_dance)
+                "std":("safe_to_dance", self.safe_to_dance),
+                "cw": ("Check_wall", self.square)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -57,7 +58,16 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
+    def Check_wall(self):
+      while self.read_distance() >= 750:
+        self.read_distance()
+        self.fwd()
+        time.sleep(0.5)
+        #self.stop()
+      
 
+
+      
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         for safty in range (4):
