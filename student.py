@@ -69,7 +69,7 @@ class Piggy(PiggyParent):
 
     def roof_turn(self):
       i = 1
-      while i = 1:
+      while i < 10:
         while self.read_distance() >= 600:
           self.read_distance()
           self.fwd()
