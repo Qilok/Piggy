@@ -77,8 +77,6 @@ class Piggy(PiggyParent):
         else:  
           self.right(primary=90, counter=-90)
           time.sleep(1)
-          self.fwd()
-          time.sleep(0.5)
           for butty2 in range(4):
             self.right(primary=90, counter=-90)
             time.sleep(0.2)
