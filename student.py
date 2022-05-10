@@ -105,6 +105,7 @@ class Piggy(PiggyParent):
             self.read_distance()
             self.right()
             time.sleep(0.1)
+            print("std")
           else:
             self.fwd()
             time.sleep(0.2)
