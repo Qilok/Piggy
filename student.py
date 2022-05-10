@@ -108,7 +108,8 @@ class Piggy(PiggyParent):
                 time.sleep(0.1)
             self.fwd()
             time.sleep(0.5)
-            self.turn_by_deg((270)   
+            self.turn_by_deg(270)   
+        self.stop()
 
     def dance(self):
         self.servo(1000)
