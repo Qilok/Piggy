@@ -91,6 +91,7 @@ class Piggy(PiggyParent):
     def box_turn(self):
       i = 1
       while i < 10:
+        self.servo(1300)
         self.read_distance()
         while self.read_distance() >= 400:
           self.read_distance()
