@@ -106,7 +106,7 @@ class Piggy(PiggyParent):
             self.right()
             time.sleep(0.1)
           else:
-            print(cat)
+            print("cat")
             
       else:
         self.stop()
