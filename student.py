@@ -68,6 +68,7 @@ class Piggy(PiggyParent):
       else:  
         self.stop()
 
+    
     def roof_turn(self):
       i = 1
       while i < 10:
@@ -88,31 +89,33 @@ class Piggy(PiggyParent):
 
 
 
+    
     def box_turn(self):
       
-      # infinite loop... never stop navigating
-      while True:
-        # look straight ahead
-        self.servo(1300)
-        while self.read_distance() >= 300:
-          self.fwd()
-          time.sleep(0.2)
-        self.right()
-        time.sleep(0.3)        
-        while self.read_distance() <=300:
-          self.turn_by_deg(10)
-          self.servo(2000)          
-        while self.read_distance() <=400:
-          self.fwd()
-          time.sleep(0.1)
-        self.fwd()
-        time.sleep(0.5)
-        self.turn_by_deg((270)
+        # infinite loop... never stop navigating
+        while True:
+            # look straight ahead
+            self.servo(1300)
+            while self.read_distance() >= 300:
+              self.fwd()
+              time.sleep(0.2)
+            self.right()
+            time.sleep(0.3)        
+            while self.read_distance() <=300:
+              self.turn_by_deg(10)
+              self.servo(2000)          
+            while self.read_distance() <=400:
+              self.fwd()
+              time.sleep(0.1)
+            self.fwd()
+            time.sleep(0.5)
+            self.turn_by_deg((270)
 
-    def safe_to_dance(self):
-      pass
+    
+   
 
           
+    
     def dance(self):
       self.servo(1000)
       self.read_distance()
@@ -147,6 +150,12 @@ class Piggy(PiggyParent):
           self.stop()
 
 
+
+    def safe_to_dance(self):
+        pass
+
+
+    
     def square(self):
         for edge in range(4):
           self.fwd()
@@ -155,11 +164,13 @@ class Piggy(PiggyParent):
           time.sleep(1)
         self.stop
       
+    
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
         self.stop()
 
+    
     def example_move(self):
         """this is an example dance move that should be replaced by student-created content"""
         self.right() # start rotating right
@@ -169,15 +180,18 @@ class Piggy(PiggyParent):
         time.sleep(.25) # give your head time to move
         self.servo(2000) # look left
 
+    
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
         for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 3):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
 
+    
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         pass
+
 
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
@@ -197,6 +211,7 @@ class Piggy(PiggyParent):
 
 ###########
 ## MAIN APP
+
 if __name__ == "__main__":  # only run this loop if this is the main file
 
     p = Piggy()
