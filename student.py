@@ -105,12 +105,17 @@ class Piggy(PiggyParent):
             self.read_distance()
             self.right()
             time.sleep(0.1)
-            print("std")
           else:
-            self.fwd()
-            time.sleep(0.2)
-            print("cat")
-            self.stop()
+            self.servo(2000)
+            self.read_distance()
+            while self.read_distance() <=300:
+              self.fwd()
+              time.sleep(0.1)
+            else:
+              self.fwd()
+              time.sleep(0.5)
+              self.right()
+              time.sleep(1)
             
       else:
         self.stop()
