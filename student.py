@@ -114,6 +114,7 @@ class Piggy(PiggyParent):
             else:
               self.fwd()
               time.sleep(0.5)
+              self.stop()
               self.turn_by_deg((270)
             
       else:
