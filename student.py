@@ -90,29 +90,25 @@ class Piggy(PiggyParent):
 
 
     
-    def box_turn(self):
-      
+    def box_turn(self): 
         # infinite loop... never stop navigating
         while True:
             # look straight ahead
             self.servo(1300)
             while self.read_distance() >= 300:
-              self.fwd()
-              time.sleep(0.2)
+                self.fwd()
+                time.sleep(0.2)
             self.right()
             time.sleep(0.3)        
             while self.read_distance() <=300:
-              self.turn_by_deg(10)
-              self.servo(2000)          
+                self.turn_by_deg(10)
+                self.servo(2000)          
             while self.read_distance() <=400:
-              self.fwd()
-              time.sleep(0.1)
+                self.fwd()
+                time.sleep(0.1)
             self.fwd()
             time.sleep(0.5)
-            self.turn_by_deg((270)
-
-    
-   
+            self.turn_by_deg((270)   
 
           
     
