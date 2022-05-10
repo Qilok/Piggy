@@ -98,7 +98,7 @@ class Piggy(PiggyParent):
           self.fwd()
           time.sleep(0.2)
         else:  
-          self.right(primary=90, counter=-90)
+          self.right()
           time.sleep(0.5)
           self.servo(500)
           self.read_distance()
