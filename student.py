@@ -99,7 +99,8 @@ class Piggy(PiggyParent):
                 self.fwd()
                 time.sleep(0.2)
             self.right()
-            time.sleep(0.3)        
+            time.sleep(0.3)      
+            self.servo(1300)
             #moves to the right while it does not see the hope
             while self.read_distance() <=300:
                 self.right()
