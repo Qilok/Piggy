@@ -45,7 +45,8 @@ class Piggy(PiggyParent):
                 "std":("safe_to_dance", self.safe_to_dance),
                 "cw": ("Check_wall", self.check_wall),
                 "rt": ("roof_turn", self.roof_turn),
-                "bt": ("box_turn", self.box_turn)
+                "bt": ("box_turn", self.box_turn),
+                "cbt": ("complicated_box_turn", self.complicated_box_turn)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -117,6 +118,14 @@ class Piggy(PiggyParent):
                 time.sleep(1)
 
         self.stop()
+
+
+
+    def complicated_box_turn(self): 
+        self.servo(1300)
+        while True:
+            self.read.distance()
+    
 
     def dance(self):
         self.servo(1000)
