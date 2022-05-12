@@ -124,7 +124,7 @@ class Piggy(PiggyParent):
     def complicated_box_turn(self): 
         self.servo(2000)
         self.read_distance()
-        while self.read_distance() >=2500:
+        while self.read_distance() >=400:
             return self.get_heading()
             self.servo(get_heading - 100)
         print("it worked holyf")
