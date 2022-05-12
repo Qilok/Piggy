@@ -128,7 +128,7 @@ class Piggy(PiggyParent):
             return self.get_heading()
             self.servo(get_heading - 100)
         print("it worked holyf")
-        
+      """  
         # infinite loop... never stop navigating
         while True:
             # look straight ahead
@@ -155,7 +155,7 @@ class Piggy(PiggyParent):
                 time.sleep(1)
 
         self.stop()
-
+        """
     def dance(self):
         self.servo(1000)
         self.read_distance()
