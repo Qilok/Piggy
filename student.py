@@ -127,7 +127,7 @@ class Piggy(PiggyParent):
         while self.read_distance() >=2500:
             return self.get_heading()
             self.servo(get_heading - 100)
-        print(it worked holy)
+        print(it worked holyf)
         
         # infinite loop... never stop navigating
         while True:
