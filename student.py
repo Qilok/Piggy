@@ -95,14 +95,14 @@ class Piggy(PiggyParent):
         while True:
             # look straight ahead
             self.servo(1300)
-            while self.read_distance() >= 301:
+            while self.read_distance() >= 201:
                 self.fwd()
                 time.sleep(0.2)
             self.right()
             time.sleep(0.3)      
             self.servo(1300)
             #moves to the right while it does not see the hope
-            while self.read_distance() <=300:
+            while self.read_distance() <=400:
                 self.right()
                 time.sleep(0.2)
             #moves its head so it will see only the box
