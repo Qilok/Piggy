@@ -122,10 +122,39 @@ class Piggy(PiggyParent):
 
 
     def complicated_box_turn(self): 
-        self.servo(1300)
+        self.servo(2000)
+        self.read_distance()
+        while self.read_distance() >=2500:
+            return self.get_heading()
+            self.servo(get_heading - 100)
+        print(it worked holy)
+        
+        # infinite loop... never stop navigating
         while True:
-            self.read_distance()
-    
+            # look straight ahead
+            self.servo(1300)
+            while self.read_distance() >= 201:
+                self.fwd()
+                time.sleep(0.2)
+            self.right()
+            time.sleep(0.4)      
+            #moves to the right while it does not see the hope
+            while self.read_distance() <=450:
+                self.turn_by_deg(20)
+            #moves its head so it will see only the box
+            while True:
+                self.servo(2100)  
+                #goes straith untill it will se the hope again
+                while self.read_distance() <=300:
+                    self.fwd()
+                    time.sleep(0.1)
+                self.servo(1300)  
+                self.fwd()
+                time.sleep(1)
+                self.left()   
+                time.sleep(1)
+
+        self.stop()
 
     def dance(self):
         self.servo(1000)
