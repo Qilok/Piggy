@@ -128,7 +128,8 @@ class Piggy(PiggyParent):
             return self.get_heading()
             self.servo(get_heading - 100)
         print("it worked holyf")
-      """  
+        
+        """  
         # infinite loop... never stop navigating
         while True:
             # look straight ahead
