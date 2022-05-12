@@ -124,7 +124,7 @@ class Piggy(PiggyParent):
     def complicated_box_turn(self): 
         self.servo(1300)
         while True:
-            self.read.distance()
+            self.read_distance()
     
 
     def dance(self):
