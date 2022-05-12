@@ -125,7 +125,6 @@ class Piggy(PiggyParent):
         self.servo(2000)
         self.read_distance()
         while self.read_distance() >=400:
-            return self.get_heading()
             self.servo = self.servo - 100
         print("it worked holyf")
         
