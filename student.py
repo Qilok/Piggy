@@ -122,11 +122,53 @@ class Piggy(PiggyParent):
 
 
     def complicated_box_turn(self): 
-        self.servo(2000)
-        self.read_distance()
-        while self.read_distance() >=400:
-            self.servo = self.servo - 100
-        print("it worked holyf")
+        while True:
+            # look straight ahead
+            self.servo(1300)
+            while self.read_distance() >= 201:
+                self.fwd()
+                time.sleep(0.2)
+            self.servo(2000)
+            left_distance = self.read_distance()
+            self.servo(1000)
+            right_distance = self.read_distance()
+            
+            if left_distance > right_distance:
+                self.right()
+                time.sleep(0.4)      
+                #moves to the right while it does not see the hope
+                while self.read_distance() <=450:
+                    self.turn_by_deg(20)
+                #moves its head so it will see only the box
+                while True:
+                    self.servo(2100)  
+                    #goes straith untill it will se the hope again
+                    while self.read_distance() <=300:
+                        self.fwd()
+                        time.sleep(0.1)
+                    self.servo(1300)  
+                    self.fwd()
+                    time.sleep(1)
+                    self.left()   
+                    time.sleep(0.8)
+            else:
+                self.left()
+                time.sleep(0.4)      
+                #moves to the right while it does not see the hope
+                while self.read_distance() <=450:
+                    self.turn_by_deg(20)
+                #moves its head so it will see only the box
+                while True:
+                    self.servo(1300)  
+                    #goes straith untill it will se the hope again
+                    while self.read_distance() <=300:
+                        self.fwd()
+                        time.sleep(0.1)
+                    self.servo(1300)  
+                    self.fwd()
+                    time.sleep(1)
+                    self.right()   
+                    time.sleep(0.8)
         
         """  
         # infinite loop... never stop navigating
