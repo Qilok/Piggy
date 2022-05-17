@@ -134,7 +134,7 @@ class Piggy(PiggyParent):
             self.servo(1000)
             right_distance = self.read_distance()
             
-            if left_distance > right_distance:
+            if left_distance < right_distance:
                 self.right()
                 time.sleep(0.4)      
                 #moves to the right while it does not see the hope
