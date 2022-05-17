@@ -115,7 +115,7 @@ class Piggy(PiggyParent):
                 self.fwd()
                 time.sleep(1)
                 self.left()   
-                time.sleep(0.8)
+                time.sleep(0.9)
 
         self.stop()
 
@@ -153,7 +153,7 @@ class Piggy(PiggyParent):
                     self.fwd()
                     time.sleep(1)
                     self.left()   
-                    time.sleep(0.8)
+                    time.sleep(0.9)
             else:
                 self.left()
                 time.sleep(0.4)      
@@ -171,7 +171,7 @@ class Piggy(PiggyParent):
                     self.fwd()
                     time.sleep(1)
                     self.right()   
-                    time.sleep(0.8)
+                    time.sleep(0.9)
         
         """  
         # infinite loop... never stop navigating
