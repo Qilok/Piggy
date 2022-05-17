@@ -133,6 +133,8 @@ class Piggy(PiggyParent):
             left_distance = self.read_distance()
             self.servo(800)
             right_distance = self.read_distance()
+            print(right_distance)
+            print(left_distance)
             
             if left_distance < right_distance:
                 self.right()
@@ -160,7 +162,7 @@ class Piggy(PiggyParent):
                     self.turn_by_deg(340)
                 #moves its head so it will see only the box
                 while True:
-                    self.servo(1300)  
+                    self.servo(800)  
                     #goes straith untill it will se the hope again
                     while self.read_distance() <=300:
                         self.fwd()
