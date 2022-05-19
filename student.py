@@ -177,7 +177,9 @@ class Piggy(PiggyParent):
                     time.sleep(0.7)
                     
     def s_scam(self): 
-        self.servo(1300)
+        self.servo(2000)
+        self.servo(1000)
+        """
         while True:
             self.fwd()
             time.sleep(0.1)
@@ -185,6 +187,7 @@ class Piggy(PiggyParent):
             self.read_distance()
             self.servo(2000)
             self.read_distance()
+        """
             
     def dance(self):
         self.servo(1000)
