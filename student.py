@@ -46,7 +46,8 @@ class Piggy(PiggyParent):
                 "cw": ("Check_wall", self.check_wall),
                 "rt": ("roof_turn", self.roof_turn),
                 "bt": ("box_turn", self.box_turn),
-                "cbt": ("complicated_box_turn", self.complicated_box_turn)
+                "cbt": ("complicated_box_turn", self.complicated_box_turn),
+                "ss": ("s_scam", self.s_scam)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -174,35 +175,17 @@ class Piggy(PiggyParent):
                     time.sleep(1)
                     self.right()   
                     time.sleep(0.7)
-        
-        """  
-        # infinite loop... never stop navigating
+                    
+    def s_scam(self): 
+        self.servo(1300)
         while True:
-            # look straight ahead
-            self.servo(1300)
-            while self.read_distance() >= 201:
-                self.fwd()
-                time.sleep(0.2)
-            self.right()
-            time.sleep(0.4)      
-            #moves to the right while it does not see the hope
-            while self.read_distance() <=450:
-                self.turn_by_deg(20)
-            #moves its head so it will see only the box
-            while True:
-                self.servo(2100)  
-                #goes straith untill it will se the hope again
-                while self.read_distance() <=300:
-                    self.fwd()
-                    time.sleep(0.1)
-                self.servo(1300)  
-                self.fwd()
-                time.sleep(1)
-                self.left()   
-                time.sleep(1)
-
-        self.stop()
-        """
+            self.fwd
+            time.sleep(0.1)
+            self.servo(800)
+            self.read_distance()
+            self.servo(2000)
+            self.read_distance()
+            
     def dance(self):
         self.servo(1000)
         self.read_distance()
