@@ -48,7 +48,8 @@ class Piggy(PiggyParent):
                 "bt": ("box_turn", self.box_turn),
                 "cbt": ("complicated_box_turn", self.complicated_box_turn),
                 "ss": ("s_scam", self.s_scam),
-                "ms": ("m_scam", self.m_scam)
+                "ms": ("m_scam", self.m_scam),
+                "hhs": ("hh_scam", self.hh_scam)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -230,6 +231,57 @@ class Piggy(PiggyParent):
                 time.sleep(1)
 
 
+
+
+
+    def hs_scam(self): 
+        self.servo(1300)
+        while True:
+            while self.read_distance() >= 400:
+                self.fwd()
+                time.sleep(0.2)
+                self.servo(800)
+                time.sleep(0.2)
+                self.read_distance()
+                self.servo(1300)
+                time.sleep(0.2)
+                self.read_distance()
+                self.servo(2000)
+                time.sleep(0.2)
+                self.read_distance()
+                self.servo(1300)
+                time.sleep(0.2)
+                self.read_distance()
+            self.stop  
+            self.servo(1300)
+            self.servo(800)
+            self.read_distance()
+            right_distance = self.read_distance()
+            self.servo(2000)
+            self.read_distance()
+            left_distance = self.read_distance()
+            if left_distance < right_distance:
+                r = 0
+                while r < 10:
+                    r + 1
+                    self.right()
+                    time.sleep(0.1)
+                r2 = 0
+                while r2 < 10:
+                    r2 + 1
+                    self.left()
+                    time.sleep(0.1)
+            else:
+                l = 0
+                while l < 10:
+                    l + 1
+                    self.left()
+                    time.sleep(0.1)
+                l2 = 0
+                while l2 < 10:
+                    l2 + 1
+                    self.right()
+                    time.sleep(0.1)
 
 
             
