@@ -179,7 +179,7 @@ class Piggy(PiggyParent):
     def s_scam(self): 
         self.servo(1300)
         while True:
-            self.fwd
+            self.fwd()
             time.sleep(0.1)
             self.servo(800)
             self.read_distance()
