@@ -47,7 +47,8 @@ class Piggy(PiggyParent):
                 "rt": ("roof_turn", self.roof_turn),
                 "bt": ("box_turn", self.box_turn),
                 "cbt": ("complicated_box_turn", self.complicated_box_turn),
-                "ss": ("s_scam", self.s_scam)
+                "ss": ("s_scam", self.s_scam),
+                "ms": ("m_scam", self.m_scam)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -177,9 +178,7 @@ class Piggy(PiggyParent):
                     time.sleep(0.7)
                     
     def s_scam(self): 
-        self.servo(2000)
-        self.servo(1000)
-        """
+        self.servo(1300)
         while True:
             self.fwd()
             time.sleep(0.1)
@@ -187,7 +186,18 @@ class Piggy(PiggyParent):
             self.read_distance()
             self.servo(2000)
             self.read_distance()
-        """
+
+
+    def m_scam(self): 
+        self.servo(1300)
+        while True:
+            self.fwd()
+            time.sleep(0.1)
+            self.servo(800)
+            self.read_distance()
+            self.servo(2000)
+            self.read_distance()
+
             
     def dance(self):
         self.servo(1000)
