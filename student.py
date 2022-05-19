@@ -191,12 +191,37 @@ class Piggy(PiggyParent):
     def m_scam(self): 
         self.servo(1300)
         while True:
-            self.fwd()
-            time.sleep(0.1)
+            while self.read_distance() >= 201:
+                self.fwd()
+                time.sleep(0.1)
+                self.servo(800)
+                self.read_distance()
+                self.servo(2000)
+                self.read_distance()
+            self.stop  
             self.servo(800)
             self.read_distance()
+            right_distance = self.read_distance()
             self.servo(2000)
             self.read_distance()
+            left_distance = self.read_distance()
+            if left_distance < right_distance:
+                self.right()
+                time.sleep(4)
+                self.fwd()
+                time.sleep(4)
+                self.left()
+                time.sleep(4)
+            else:
+                self.left()
+                time.sleep(4)
+                self.fwd()
+                time.sleep(4)
+                self.right()
+                time.sleep(4)
+
+
+
 
             
     def dance(self):
