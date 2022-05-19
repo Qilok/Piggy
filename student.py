@@ -49,7 +49,7 @@ class Piggy(PiggyParent):
                 "cbt": ("complicated_box_turn", self.complicated_box_turn),
                 "ss": ("s_scam", self.s_scam),
                 "ms": ("m_scam", self.m_scam),
-                "hhs": ("hh_scam", self.hh_scam)
+                "hss": ("hs_scam", self.hs_scam)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
