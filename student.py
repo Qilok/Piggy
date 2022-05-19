@@ -262,27 +262,34 @@ class Piggy(PiggyParent):
             left_distance = self.read_distance()
             if left_distance < right_distance:
                 r = 0
-                while r < 10:
+                while r < 5:
                     r + 1
                     self.right()
                     time.sleep(0.1)
+                    self.fwd()
+                    time.sleep(0.1)
                 r2 = 0
-                while r2 < 10:
+                while r2 < 5:
                     r2 + 1
                     self.left()
                     time.sleep(0.1)
+                    self.fwd()
+                    time.sleep(0.1)
             else:
                 l = 0
-                while l < 10:
+                while l < 5:
                     l + 1
                     self.left()
                     time.sleep(0.1)
+                    self.fwd()
+                    time.sleep(0.1)
                 l2 = 0
-                while l2 < 10:
+                while l2 < 5:
                     l2 + 1
                     self.right()
                     time.sleep(0.1)
-
+                    self.fwd()
+                    time.sleep(0.1)
 
             
     def dance(self):
