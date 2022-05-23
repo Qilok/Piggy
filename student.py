@@ -257,7 +257,6 @@ class Piggy(PiggyParent):
                 time.sleep(0.2)
                 self.read_distance()
             self.stop  
-            self.servo(1300)
             self.servo(800)
             self.read_distance()
             right_distance = self.read_distance()
@@ -266,38 +265,46 @@ class Piggy(PiggyParent):
             left_distance = self.read_distance()
             self.servo(1300)
             self.read_distance()
+            self.servo(800)
+            self.read_distance()
+            right_distance2 = self.read_distance()
+            self.servo(2000)
+            self.read_distance()
+            left_distance2 = self.read_distance()
             middle_distance = self.read_distance()
             if middle_distance > 800:
                 if left_distance < right_distance:
-                    r = 0
-                    while r < 10:
-                        r = r + 1
-                        self.right()
-                        time.sleep(0.1)
-                        self.fwd()
-                        time.sleep(0.1)
-                    r2 = 0
-                    while r2 < 10:
-                        r2 = r2 + 1
-                        self.left()
-                        time.sleep(0.1)
-                        self.fwd()
-                        time.sleep(0.1)
+                    if left_distance2 < right_distance2:
+                        r = 0
+                        while r < 10:
+                            r = r + 1
+                            self.right()
+                            time.sleep(0.1)
+                            self.fwd()
+                            time.sleep(0.1)
+                        r2 = 0
+                        while r2 < 10:
+                            r2 = r2 + 1
+                            self.left()
+                            time.sleep(0.1)
+                            self.fwd()
+                            time.sleep(0.1)
+                    else:
+                        l = 0
+                        while l < 10:
+                            l = l + 1
+                            self.left()
+                            time.sleep(0.1)
+                            self.fwd()
+                            time.sleep(0.1)
+                        l2 = 0
+                        while l2 < 10:
+                            l2 = l2 + 1
+                            self.right()
+                            time.sleep(0.1)
+                            self.fwd()
+                            time.sleep(0.1)
                 else:
-                    l = 0
-                    while l < 10:
-                        l = l + 1
-                        self.left()
-                        time.sleep(0.1)
-                        self.fwd()
-                        time.sleep(0.1)
-                    l2 = 0
-                    while l2 < 10:
-                        l2 = l2 + 1
-                        self.right()
-                        time.sleep(0.1)
-                        self.fwd()
-                        time.sleep(0.1)
             else:
                 if left_distance < right_distance:
                     self.right()
