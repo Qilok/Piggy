@@ -301,14 +301,14 @@ class Piggy(PiggyParent):
                     self.fwd()
                     time.sleep(2)
                     self.left()
-                    time.sleep(1)
+                    time.sleep(0.7)
                 else:
                     self.left()
                     time.sleep(1)
                     self.fwd()
                     time.sleep(2)
                     self.right()
-                    time.sleep(1)
+                    time.sleep(0.7)
 
             
     def dance(self):
