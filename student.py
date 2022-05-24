@@ -236,24 +236,13 @@ class Piggy(PiggyParent):
 
     def hs_scam(self): 
         self.servo(1300)
-        while True:
-            self.fwd(30,30)
-            self.servo(800)
-            time.sleep(0.2)
-            if self.read_distance() <= 300:
-                self.hs_scam2()
-            self.servo(800)
-            time.sleep(0.2)
-            if self.read_distance() <= 300:
-                self.hs_scam2()
-            self.servo(2000)
-            time.sleep(0.2)
-            if self.read_distance() <= 300:
-                self.hs_scam2()
-            self.servo(1300)
-            time.sleep(0.2)
-            if self.read_distance() <= 300:
-                self.hs_scam2()
+        scam_list = [800, 1300, 2000]
+        while True:   
+            for value in scam_list:
+                self.fwd(30,30)
+                self.servo(value)
+                if self.read_distance() <= 300:
+                    self.hs_scam2()
             
     def hs_scam2(self):      
         self.stop()
