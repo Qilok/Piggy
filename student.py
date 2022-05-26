@@ -49,7 +49,8 @@ class Piggy(PiggyParent):
                 "cbt": ("complicated_box_turn", self.complicated_box_turn),
                 "ss": ("s_scam", self.s_scam),
                 "ms": ("m_scam", self.m_scam),
-                "hss": ("hs_scam", self.hs_scam)
+                "hss": ("hs_scam", self.hs_scam),
+                "am": ("a_smaze", self.a_maze)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -302,7 +303,27 @@ class Piggy(PiggyParent):
                 self.right()
                 time.sleep(0.7)
 
-            
+    def a_maze(self): 
+        self.servo(1300)
+        while True:
+            while self.read_distance() >= 200:
+                self.fwd()
+                time.sleep(0.2)
+                self.read_distance()
+            self.stop  
+            self.servo(800)
+            self.read_distance()
+            right_distance = self.read_distance()
+            self.servo(2000)
+            self.read_distance()
+            left_distance = self.read_distance()
+            if left_distance < right_distance:
+                self.right()
+                time.sleep(0.85)
+            else:
+                self.left()
+                time.sleep(0.85)
+                
     def dance(self):
         self.servo(1000)
         self.read_distance()
