@@ -17,7 +17,7 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_DEFAULT = 58
+        self.LEFT_DEFAULT = 57.5
         self.RIGHT_DEFAULT = 60
         self.MIDPOINT = 1300  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
@@ -323,10 +323,10 @@ class Piggy(PiggyParent):
             self.servo(1300)
             if left_distance < right_distance:
                 self.right()
-                time.sleep(0.7)
+                time.sleep(0.67)
             else:
                 self.left()
-                time.sleep(0.7)
+                time.sleep(0.67)
                 
     def dance(self):
         self.servo(1000)
