@@ -306,7 +306,7 @@ class Piggy(PiggyParent):
     def a_maze(self): 
         self.servo(1300)
         while True:
-            while self.read_distance() >= 200:
+            while self.read_distance() >= 150:
                 self.fwd()
                 time.sleep(0.2)
                 self.read_distance()
@@ -323,10 +323,10 @@ class Piggy(PiggyParent):
             self.servo(1300)
             if left_distance < right_distance:
                 self.right()
-                time.sleep(0.85)
+                time.sleep(0.75)
             else:
                 self.left()
-                time.sleep(0.85)
+                time.sleep(0.75)
                 
     def dance(self):
         self.servo(1000)
